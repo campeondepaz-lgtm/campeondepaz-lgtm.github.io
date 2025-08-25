@@ -3,10 +3,139 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Colegio Hispano Americano Trini</title>
+  <title>Colegio Hispanoamericano Trini</title>
+  <meta name="description" content="Página oficial del Colegio Hispanoamericano Trini" />
+  <style>
+    :root{
+      --brand:#0a2e6e;       /* azul oscuro */
+      --brand-2:#15b8c5;     /* turquesa */
+      --bg:#f7f9fc;          /* blanco suave */
+      --text:#0f172a;        /* gris azul muy oscuro */
+      --muted:#475569;       /* gris medio */
+      --card:#ffffff;        /* blanco */
+      --ring:rgba(21,184,197,.25);
+    }
+    *{box-sizing:border-box}
+    body{margin:0;font-family:system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;color:var(--text);background:var(--bg);}    
+    header{
+      background:linear-gradient(135deg,var(--brand),var(--brand-2));
+      color:#fff; padding:56px 16px 40px; text-align:center;
+    }
+    header .wrap{max-width:1040px;margin:0 auto}
+    .brand{
+      display:flex;align-items:center;justify-content:center;gap:14px;flex-wrap:wrap;
+    }
+    .brand img{width:72px;height:72px;object-fit:contain;filter:drop-shadow(0 6px 14px rgba(0,0,0,.15));background:#fff;border-radius:50%;padding:8px}
+    h1{margin:0;font-size:clamp(28px,5vw,40px)}
+    .motto{margin-top:6px;letter-spacing:.4px;opacity:.95}
+    nav{display:flex;gap:12px;justify-content:center;flex-wrap:wrap;margin-top:18px}
+    nav a{color:#fff;text-decoration:none;padding:8px 12px;border-radius:999px;border:1px solid rgba(255,255,255,.35)}
+    nav a:hover{background:rgba(255,255,255,.15)}
+
+    main{max-width:1040px;margin:28px auto;padding:0 16px}
+    .grid{display:grid;gap:18px}
+    @media(min-width:880px){.grid{grid-template-columns:1.2fr 1fr}}
+
+    .card{background:var(--card);border:1px solid #e5e7eb;border-radius:16px;padding:20px;box-shadow:0 8px 20px rgba(2,6,23,.05)}
+    h2{margin:0 0 10px;font-size:clamp(20px,3.5vw,28px)}
+    p{line-height:1.65;color:var(--muted)}
+    .list{padding-left:18px}
+    .list li{margin:6px 0}
+
+    .cta{display:inline-block;background:var(--brand-2);color:#06233f;text-decoration:none;padding:10px 14px;border-radius:12px;border:1px solid rgba(2,6,23,.06)}
+    .cta:hover{filter:brightness(1.03)}
+    .note{font-size:12px;color:#64748b}
+
+    footer{margin-top:36px;padding:28px;text-align:center;color:#64748b}
+  </style>
 </head>
-<body style="font-family:Arial;text-align:center;margin-top:50px">
-  <h1>Bienvenidos al Colegio Hispano Americano Trini</h1>
-  <p>Esta es nuestra página oficial.</p>
+<body>
+  <header>
+    <div class="wrap">
+      <div class="brand">
+        <img src="escudo-trini.png" alt="Escudo del Colegio Hispanoamericano Trini" />
+        <div>
+          <h1>Colegio Hispanoamericano Trini</h1>
+          <div class="motto">Amor • Ciencia • Dignidad</div>
+        </div>
+      </div>
+      <nav>
+        <a href="#mision">Misión</a>
+        <a href="#noticias">Noticias</a>
+        <a href="#admision">Admisión</a>
+        <a href="#contacto">Contacto</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <div class="grid">
+      <section class="card" id="mision">
+        <h2>Misión</h2>
+        <p>
+          Nuestro colegio, ubicado en Carabayllo, Lima, tiene como misión formar niños y adolescentes como personas
+          íntegras, críticas y creativas, mediante el desarrollo integral de sus habilidades múltiples. Promovemos un
+          aprendizaje significativo y desafiante en áreas clave como las Olimpiadas de Letras y Matemáticas, el ajedrez y
+          diversas disciplinas deportivas, fomentando el pensamiento lógico, la expresión lingüística, el razonamiento
+          estratégico y el trabajo en equipo.
+        </p>
+        <p>
+          Impulsamos una educación inclusiva, innovadora y orientada al esfuerzo, la disciplina y la excelencia, donde
+          cada estudiante descubra y potencie sus talentos. A través de la participación activa en competencias
+          académicas y deportivas, cultivamos valores como la perseverancia, la responsabilidad, el respeto y el espíritu
+          de superación.
+        </p>
+        <p>
+          Formamos futuros líderes con conciencia social, preparados para enfrentar los retos del siglo XXI con
+          confianza, ética y capacidad de transformación positiva en su entorno.
+        </p>
+      </section>
+
+      <aside class="card">
+        <h2>Calendario</h2>
+        <ul class="list">
+          <li><strong>Septiembre</strong>: Inicio de matrículas 2026.</li>
+          <li><strong>Octubre</strong>: Olimpiadas escolares.</li>
+        </ul>
+      </aside>
+    </div>
+
+    <section class="card" id="noticias" style="margin-top:18px">
+      <h2>Noticias</h2>
+      <ul class="list">
+        <li><strong>Octubre:</strong> Olimpiadas Escolares.</li>
+        <li><strong>Septiembre:</strong> Inicio de matrículas 2026.</li>
+      </ul>
+    </section>
+
+    <section class="card" id="admision" style="margin-top:18px">
+      <h2>Admisión</h2>
+      <p>Requisitos y pasos para postular:</p>
+      <ol class="list">
+        <li>Preinscribirse en línea (formulario).</li>
+        <li>Presentar <strong>certificado de notas</strong> y <strong>libreta de notas</strong>.</li>
+        <li>Acreditar que el/la estudiante está <strong>aprobado(a) en conducta</strong>.</li>
+        <li>Agendar entrevista personal.</li>
+      </ol>
+      <a class="cta" href="#" target="_blank" rel="noopener">Completar preinscripción</a>
+      <div class="note">Si ya tienes un Google Form, reemplaza el enlace de arriba.</div>
+    </section>
+
+    <section class="card" id="contacto" style="margin-top:18px">
+      <h2>Contacto</h2>
+      <p>
+        Dirección: Av. Manuel Prado, Mz B, lotes del 6 al 10, Carabayllo, Lima<br/>
+        Correo: <a href="mailto:colegiotrini@gmail.com">colegiotrini@gmail.com</a>
+      </p>
+      <a class="cta" href="https://wa.me/51966417562" target="_blank" rel="noopener">WhatsApp: 966 417 562</a>
+      <div class="note">Si deseas añadir un teléfono fijo, me lo indicas y lo agrego.</div>
+    </section>
+  </main>
+
+  <footer>
+    © <span id="y"></span> Colegio Hispanoamericano Trini — Todos los derechos reservados
+  </footer>
+
+  <script>document.getElementById('y').textContent=new Date().getFullYear();</script>
 </body>
 </html>
