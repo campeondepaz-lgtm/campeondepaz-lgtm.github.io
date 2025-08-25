@@ -9,70 +9,102 @@
     :root{
       --brand:#0a2e6e;       /* azul oscuro */
       --brand-2:#15b8c5;     /* turquesa */
-      --bg:#f7f9fc;          /* blanco suave */
-      --text:#0f172a;        /* gris azul muy oscuro */
+      --bg:#f5f8fb;          /* fondo suave */
+      --text:#0f172a;        /* gris-azul muy oscuro */
       --muted:#475569;       /* gris medio */
-      --card:#ffffff;        /* blanco */
+      --card:#ffffff;
       --ring:rgba(21,184,197,.25);
     }
     *{box-sizing:border-box}
     body{margin:0;font-family:system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;color:var(--text);background:var(--bg);}    
-    header{
-      background:linear-gradient(135deg,var(--brand),var(--brand-2));
-      color:#fff; padding:56px 16px 40px; text-align:center;
-    }
-    header .wrap{max-width:1040px;margin:0 auto}
-    .brand{
-      display:flex;align-items:center;justify-content:center;gap:14px;flex-wrap:wrap;
-    }
-    .brand img{width:72px;height:72px;object-fit:contain;filter:drop-shadow(0 6px 14px rgba(0,0,0,.15));background:#fff;border-radius:50%;padding:8px}
-    h1{margin:0;font-size:clamp(28px,5vw,40px)}
-    .motto{margin-top:6px;letter-spacing:.4px;opacity:.95}
-    nav{display:flex;gap:12px;justify-content:center;flex-wrap:wrap;margin-top:18px}
-    nav a{color:#fff;text-decoration:none;padding:8px 12px;border-radius:999px;border:1px solid rgba(255,255,255,.35)}
-    nav a:hover{background:rgba(255,255,255,.15)}
 
-    main{max-width:1040px;margin:28px auto;padding:0 16px}
+    /* ======= Header fijo ======= */
+    .topbar{position:sticky;top:0;z-index:50;background:#ffffffcc;backdrop-filter:saturate(140%) blur(8px);border-bottom:1px solid #e6e9f0}
+    .topbar .container{max-width:1200px;margin:0 auto;display:flex;align-items:center;gap:12px;justify-content:space-between;padding:10px 16px}
+    .brand{display:flex;align-items:center;gap:10px}
+    .brand img{width:44px;height:44px;object-fit:contain;border-radius:50%;background:#fff;box-shadow:0 2px 8px rgba(0,0,0,.08);padding:6px}
+    .brand h1{font-size:18px;margin:0}
+    .nav{display:flex;gap:10px;flex-wrap:wrap}
+    .nav a{color:#0a2e6e;text-decoration:none;padding:8px 10px;border-radius:999px}
+    .nav a:hover{background:#eaf6f7}
+    .cta-top{display:inline-block;background:var(--brand-2);color:#06233f;text-decoration:none;padding:8px 12px;border-radius:12px;border:1px solid rgba(2,6,23,.06)}
+
+    /* ======= Hero ======= */
+    header.hero{
+      background:linear-gradient(135deg,rgba(10,46,110,.95),rgba(21,184,197,.85)),
+                 url('portada.jpg') center/cover no-repeat; /* sube una foto como portada.jpg */
+      color:#fff; padding:86px 16px 64px; text-align:center;
+    }
+    header.hero .wrap{max-width:1100px;margin:0 auto}
+    header.hero h2{margin:0 0 10px;font-size:clamp(28px,4.5vw,46px)}
+    .motto{opacity:.95;letter-spacing:.4px}
+    .quick{margin-top:18px;display:flex;gap:10px;justify-content:center;flex-wrap:wrap}
+    .quick a{color:#06233f;background:#ffffff; text-decoration:none;padding:10px 14px;border-radius:12px}
+
+    main{max-width:1100px;margin:28px auto;padding:0 16px}
     .grid{display:grid;gap:18px}
-    @media(min-width:880px){.grid{grid-template-columns:1.2fr 1fr}}
-
-    .card{background:var(--card);border:1px solid #e5e7eb;border-radius:16px;padding:20px;box-shadow:0 8px 20px rgba(2,6,23,.05)}
-    h2{margin:0 0 10px;font-size:clamp(20px,3.5vw,28px)}
-    p{line-height:1.65;color:var(--muted)}
+    @media(min-width:900px){.grid{grid-template-columns:1.2fr 1fr}}
+    .card{background:var(--card);border:1px solid #e5e7eb;border-radius:16px;padding:22px;box-shadow:0 8px 26px rgba(2,6,23,.06)}
+    h3{margin:0 0 10px;font-size:clamp(20px,3.2vw,28px)}
+    p{line-height:1.7;color:var(--muted)}
     .list{padding-left:18px}
     .list li{margin:6px 0}
+
+    /* ======= Highlights ======= */
+    .hi{display:grid;gap:14px;margin-top:18px}
+    @media(min-width:700px){.hi{grid-template-columns:repeat(3,1fr)}}
+    .hi .tile{background:#fff;border:1px solid #e8edf3;border-radius:14px;padding:16px}
+    .tile b{color:var(--brand)}
+
+    /* ======= Galería sencilla ======= */
+    .gallery{display:grid;gap:10px;margin-top:10px}
+    @media(min-width:700px){.gallery{grid-template-columns:repeat(3,1fr)}}
+    .gallery img{width:100%;border-radius:12px;border:1px solid #e8edf3}
 
     .cta{display:inline-block;background:var(--brand-2);color:#06233f;text-decoration:none;padding:10px 14px;border-radius:12px;border:1px solid rgba(2,6,23,.06)}
     .cta:hover{filter:brightness(1.03)}
     .note{font-size:12px;color:#64748b}
 
-    footer{margin-top:36px;padding:28px;text-align:center;color:#64748b}
+    footer{margin-top:40px;padding:28px;text-align:center;color:#64748b}
+    .social{display:flex;gap:12px;justify-content:center;margin-top:8px}
+    .social a{display:inline-flex;align-items:center;gap:6px;color:#475569;text-decoration:none}
   </style>
 </head>
 <body>
-  <header>
-    <div class="wrap">
+  <!-- Barra superior -->
+  <div class="topbar">
+    <div class="container">
       <div class="brand">
         <img src="escudo-trini.jpeg" alt="Escudo del Colegio Hispanoamericano Trini" />
-
-        <div>
-          <h1>Colegio Hispanoamericano Trini</h1>
-          <div class="motto">Amor • Ciencia • Dignidad</div>
-        </div>
+        <h1>Colegio Hispanoamericano Trini</h1>
       </div>
-      <nav>
+      <nav class="nav">
         <a href="#mision">Misión</a>
         <a href="#noticias">Noticias</a>
         <a href="#admision">Admisión</a>
         <a href="#contacto">Contacto</a>
+        <a class="cta-top" href="#admision">Preinscripción</a>
       </nav>
+    </div>
+  </div>
+
+  <!-- Hero -->
+  <header class="hero">
+    <div class="wrap">
+      <h2>Amor • Ciencia • Dignidad</h2>
+      <div class="motto">Formamos líderes con conciencia social para los retos del siglo XXI.</div>
+      <div class="quick">
+        <a href="#noticias">Ver noticias</a>
+        <a href="#admision">Proceso de admisión</a>
+        <a href="#contacto">Contactar</a>
+      </div>
     </div>
   </header>
 
   <main>
     <div class="grid">
       <section class="card" id="mision">
-        <h2>Misión</h2>
+        <h3>Nuestra misión</h3>
         <p>
           Nuestro colegio, ubicado en Carabayllo, Lima, tiene como misión formar niños y adolescentes como personas
           íntegras, críticas y creativas, mediante el desarrollo integral de sus habilidades múltiples. Promovemos un
@@ -90,19 +122,31 @@
           Formamos futuros líderes con conciencia social, preparados para enfrentar los retos del siglo XXI con
           confianza, ética y capacidad de transformación positiva en su entorno.
         </p>
+        <div class="hi">
+          <div class="tile"><b>Excelencia</b><br/>Altas expectativas académicas y humanas.</div>
+          <div class="tile"><b>Innovación</b><br/>Metodologías activas, ajedrez y olimpíadas.</div>
+          <div class="tile"><b>Deporte</b><br/>Disciplina, trabajo en equipo y salud.</div>
+        </div>
       </section>
 
       <aside class="card">
-        <h2>Calendario</h2>
+        <h3>Calendario</h3>
         <ul class="list">
-          <li><strong>Septiembre</strong>: Inicio de matrículas 2026.</li>
-          <li><strong>Octubre</strong>: Olimpiadas escolares.</li>
+          <li><strong>Septiembre:</strong> Inicio de matrículas 2026.</li>
+          <li><strong>Octubre:</strong> Olimpiadas Escolares.</li>
+          <li><strong>Noviembre:</strong> Feria de Ciencia y Tecnología.</li>
         </ul>
+        <div class="gallery">
+          <img src="galeria1.jpg" alt="Actividad escolar 1" />
+          <img src="galeria2.jpg" alt="Actividad escolar 2" />
+          <img src="galeria3.jpg" alt="Actividad escolar 3" />
+        </div>
+        <div class="note">(Sube imágenes con esos nombres para que se muestren.)</div>
       </aside>
     </div>
 
     <section class="card" id="noticias" style="margin-top:18px">
-      <h2>Noticias</h2>
+      <h3>Noticias</h3>
       <ul class="list">
         <li><strong>Octubre:</strong> Olimpiadas Escolares.</li>
         <li><strong>Septiembre:</strong> Inicio de matrículas 2026.</li>
@@ -110,7 +154,7 @@
     </section>
 
     <section class="card" id="admision" style="margin-top:18px">
-      <h2>Admisión</h2>
+      <h3>Admisión</h3>
       <p>Requisitos y pasos para postular:</p>
       <ol class="list">
         <li>Preinscribirse en línea (formulario).</li>
@@ -123,18 +167,25 @@
     </section>
 
     <section class="card" id="contacto" style="margin-top:18px">
-      <h2>Contacto</h2>
+      <h3>Contacto</h3>
       <p>
         Dirección: Av. Manuel Prado, Mz B, lotes del 6 al 10, Carabayllo, Lima<br/>
         Correo: <a href="mailto:colegiotrini@gmail.com">colegiotrini@gmail.com</a>
       </p>
       <a class="cta" href="https://wa.me/51966417562" target="_blank" rel="noopener">WhatsApp: 966 417 562</a>
-      <div class="note">Si deseas añadir un teléfono fijo, me lo indicas y lo agrego.</div>
     </section>
   </main>
 
   <footer>
     © <span id="y"></span> Colegio Hispanoamericano Trini — Todos los derechos reservados
+    <div class="social">
+      <a href="#" aria-label="Facebook">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg> Facebook
+      </a>
+      <a href="#" aria-label="Instagram">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg> Instagram
+      </a>
+    </div>
   </footer>
 
   <script>document.getElementById('y').textContent=new Date().getFullYear();</script>
